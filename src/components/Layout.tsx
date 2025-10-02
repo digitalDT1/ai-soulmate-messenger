@@ -27,8 +27,8 @@ export const Layout = ({ children }: LayoutProps) => {
       <nav className="w-20 lg:w-64 bg-card border-r border-border flex flex-col items-center lg:items-start p-4 gap-2">
         <div className="mb-8 flex items-center justify-center lg:justify-start w-full">
           <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            <span className="hidden lg:inline">Lovable AI</span>
-            <span className="lg:hidden">LA</span>
+            <span className="hidden lg:inline">TruNanymous</span>
+            <span className="lg:hidden">TN</span>
           </div>
         </div>
 
