@@ -5,14 +5,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "./integrations/supabase/client";
-import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Chat from "./pages/Chat";
+import Feed from "./pages/Feed";
 import Games from "./pages/Games";
 import News from "./pages/News";
-import ForYou from "./pages/ForYou";
 import AIAssistant from "./pages/AIAssistant";
-import Settings from "./pages/Settings";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -61,6 +60,10 @@ const App = () => {
               element={session ? <Chat /> : <Navigate to="/auth" />}
             />
             <Route
+              path="/feed"
+              element={session ? <Feed /> : <Navigate to="/auth" />}
+            />
+            <Route
               path="/games"
               element={session ? <Games /> : <Navigate to="/auth" />}
             />
@@ -69,16 +72,12 @@ const App = () => {
               element={session ? <News /> : <Navigate to="/auth" />}
             />
             <Route
-              path="/for-you"
-              element={session ? <ForYou /> : <Navigate to="/auth" />}
-            />
-            <Route
-              path="/ai-assistant"
+              path="/ai"
               element={session ? <AIAssistant /> : <Navigate to="/auth" />}
             />
             <Route
-              path="/settings"
-              element={session ? <Settings /> : <Navigate to="/auth" />}
+              path="/profile"
+              element={session ? <Profile /> : <Navigate to="/auth" />}
             />
             <Route path="*" element={<NotFound />} />
           </Routes>
